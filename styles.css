@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* primary colors */
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+
+  /* neutral colors */
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0 0% 100%);
+}
+
+/* resets */
+h1 {
+  color: var(--very-dark-magenta);
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  color: var(--white);
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.25em;
+  padding-top: 10px;
+}
+
+.buyers img {
+  border-radius: 50%;
+  width: 32px;
+  float: left;
+  margin: 20px 20px 0 40px;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  width: 90vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  margin: 0 auto;
+  padding: 40px;
+  background: url(images/bg-pattern-top-desktop.svg),
+    url(images/bg-pattern-bottom-desktop.svg);
+}
+
+section.description {
+  grid-column: 1/2;
+}
+
+.description p {
+  color: var(--dark-grayish-magenta);
+  margin-bottom: 30px;
+}
+
+section.ratings {
+  grid-column: 2/3;
+}
+
+.ratings p {
+  padding: 10px;
+  border-radius: 6px;
+  justify-content: center;
+  background-color: var(--light-grayish-magenta);
+  position: relative;
+}
+
+.ratings p img:first-child {
+  margin-left: 20px;
+}
+
+.ratings p span {
+  margin-left: 30px;
+  font-weight: 500;
+  color: var(--very-dark-magenta);
+}
+
+.ratings p:nth-of-type(2) {
+  left: 30px;
+}
+
+.ratings p:nth-of-type(3) {
+  left: 60px;
+}
+
+section.buyers {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  gap: 20px;
+}
+
+.colton,
+.irene,
+.anne {
+  background-color: var(--very-dark-magenta);
+  border-radius: 10px;
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+section.buyers p {
+  color: var(--soft-pink);
+  margin-top: -6px;
+}
+
+.irene {
+  top: 20px;
+}
+
+.anne {
+  top: 40px;
+}
+
+blockquote q {
+  color: var(--light-grayish-magenta);
+  display: block;
+}
+
+@media (max-width: 768px) {
+  #main {
+    display: flex;
+    flex-direction: column;
+    background: url(images/bg-pattern-top-mobile.svg),
+      url(images/bg-pattern-bottom-mobile.svg);
+    padding: 40px 20px;
+  }
+  section.description {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+  .description p {
+    margin: 10px 0;
+  }
+  section.ratings {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+  }
+  .ratings p {
+    position: static;
+    justify-content: center;
+  }
+  .ratings p span {
+    display: block;
+  }
+  section.buyers {
+    display: flex;
+    flex-direction: column;
+  }
+  .colton,
+  .irene,
+  .anne {
+    position: static;
+    width: 100%;
+  }
+}
